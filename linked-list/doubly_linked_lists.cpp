@@ -8,10 +8,15 @@ struct Node
     Node *next;
 };
 
-void init(Node *&head, Node *&tail)
+struct DoublyLinkedList
 {
-    head = NULL;
-    tail = NULL;
+    Node *head;
+    Node *tail;
+};
+void init(DoublyLinkedList *&list)
+{
+    list->head = NULL;
+    list->tail = NULL;
 }
 
 Node *createNode(int value)
@@ -23,45 +28,45 @@ Node *createNode(int value)
     return newNode;
 }
 
-bool addFirst(Node *&head, Node *&tail, int value)
+bool addFirst(DoublyLinkedList *&list, int value)
 {
     Node *newNode = createNode(value);
-    Node *temp = head;
+    Node *temp = list->head;
     if (temp != NULL)
     {
         newNode->next = temp;
         temp->prev = newNode;
-        head = newNode;
+        list->head = newNode;
     }
     else
     {
-        head = newNode;
-        tail = newNode;
+        list->head = newNode;
+        list->tail = newNode;
     }
     return true;
 }
 
-bool addLast(Node *&head, Node *&tail, int value)
+bool addLast(DoublyLinkedList *&list, int value)
 {
     Node *newNode = createNode(value);
-    Node *temp = tail;
+    Node *temp = list->tail;
     if (temp != NULL)
     {
         temp->next = newNode;
         newNode->prev = temp;
-        tail = newNode;
+        list->tail = newNode;
     }
     else
     {
-        tail = newNode;
-        head = newNode;
+        list->tail = newNode;
+        list->head = newNode;
     }
     return true;
 }
 
-bool addAfter(Node *&head, Node *&tail, int valuePointed, int newValue)
+bool addAfter(DoublyLinkedList *&list, int valuePointed, int newValue)
 {
-    Node *temp = head;
+    Node *temp = list->head;
     if (temp != NULL)
     {
         while (temp != NULL && temp->data != valuePointed)
@@ -80,7 +85,7 @@ bool addAfter(Node *&head, Node *&tail, int valuePointed, int newValue)
             }
             else 
             {
-                addLast(head, tail, newValue);
+                addLast(list, newValue);
             }
             return true;
         }
@@ -92,19 +97,19 @@ bool addAfter(Node *&head, Node *&tail, int valuePointed, int newValue)
     }
 }
 
-bool deleteFirst(Node *&head, Node *&tail)
+bool deleteFirst(DoublyLinkedList *&list)
 {
-    if (head != NULL)
+    if (list->head != NULL)
     {
-        Node *temp = head;
-        if (head->next == NULL)
+        Node *temp = list->head;
+        if (list->head->next == NULL)
         {
-            tail = NULL;
-            head = NULL;
+            list->tail = NULL;
+            list->head = NULL;
         }
         else
         {
-            head = temp->next;
+            list->head = temp->next;
             temp->next->prev = NULL;
             temp->next = NULL;
         }
@@ -117,28 +122,28 @@ bool deleteFirst(Node *&head, Node *&tail)
     }
 }
 
-bool deleteLast(Node *&head, Node *&tail)
+bool deleteLast(DoublyLinkedList *&list)
 {
-    if (tail != NULL)
+    if (list->tail != NULL)
     {
-        Node* temp = tail;
-        if (tail->prev != NULL)
+        Node* temp = list->tail;
+        if (list->tail->prev != NULL)
         {
-            tail = temp->prev;
+            list->tail = temp->prev;
             temp->prev->next = NULL;
             temp->prev = NULL;
         }
         else
         {
-            head = NULL;
-            tail = NULL;
+            list->head = NULL;
+            list->tail = NULL;
         }
         delete (temp);
     }
 }
-bool display(Node *head, int displayID)
+bool displayRightToLeft(Node *head, int displayID)
 {
-    cout << "****************" << displayID << "****************" << endl << endl;
+    cout << "****************" << displayID <<". Right to left" << "****************" << endl << endl;
     Node *p = head;
     while (p != NULL)
     {
@@ -148,31 +153,65 @@ bool display(Node *head, int displayID)
     cout << endl << endl;
 }
 
+bool displayLeftToRight(Node *tail, int displayID)
+{
+    cout << "****************" << displayID <<". Left to right" << "****************" << endl << endl;
+    Node *p = tail;
+    while (p != NULL)
+    {
+        cout << p->data << '\t';
+        p = p->prev;
+    }
+    cout << endl << endl;
+}
 int main()
 {
-    Node *head, *tail;
+    DoublyLinkedList *list;
     int displayID = 1;
-    init(head, tail);
-    addFirst(head, tail, 1);
-    addFirst(head, tail, 2);
-    addFirst(head, tail, 3);
-    display(head, displayID++);
-    addLast(head, tail, 4);
-    addLast(head, tail, 5);
-    display(head, displayID++);
-    addAfter(head, tail, 3, 6);
-    display(head, displayID++);
-    deleteFirst(head, tail);
-    display(head, displayID++);
-    deleteFirst(head, tail);
-    display(head, displayID++);
-    deleteLast(head, tail);
-    display(head, displayID++);
-    deleteLast(head, tail);
-    display(head, displayID++);
-    deleteLast(head, tail);
-    display(head, displayID++);
-    deleteLast(head, tail);
-    display(head, displayID++);
+    init(list);
+    addFirst(list, 1);
+    addFirst(list, 2);
+    addFirst(list, 3);
+    displayRightToLeft(list->head, displayID++);
+    addLast(list, 4);
+    addLast(list, 5);
+    displayRightToLeft(list->head, displayID++);
+    addAfter(list, 3, 6);
+    displayRightToLeft(list->head, displayID++);
+    deleteFirst(list);
+    displayRightToLeft(list->head, displayID++);
+    deleteFirst(list);
+    displayRightToLeft(list->head, displayID++);
+    deleteLast(list);
+    displayRightToLeft(list->head, displayID++);
+    deleteLast(list);
+    displayRightToLeft(list->head, displayID++);
+    deleteLast(list);
+    displayRightToLeft(list->head, displayID++);
+    deleteLast(list);
+    displayRightToLeft(list->head, displayID++);
+
+    displayID = 0;
+    addFirst(list, 1);
+    addFirst(list, 2);
+    addFirst(list, 3);
+    displayLeftToRight(list->tail, displayID++);
+    addLast(list, 4);
+    addLast(list, 5);
+    displayLeftToRight(list->tail, displayID++);
+    addAfter(list, 3, 6);
+    displayLeftToRight(list->tail, displayID++);
+    deleteFirst(list);
+    displayLeftToRight(list->tail, displayID++);
+    deleteFirst(list);
+    displayLeftToRight(list->tail, displayID++);
+    deleteLast(list);
+    displayLeftToRight(list->tail, displayID++);
+    deleteLast(list);
+    displayLeftToRight(list->tail, displayID++);
+    deleteLast(list);
+    displayLeftToRight(list->tail, displayID++);
+    deleteLast(list);
+    displayLeftToRight(list->tail, displayID++);
     return 0;
 }
