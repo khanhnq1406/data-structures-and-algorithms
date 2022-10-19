@@ -139,7 +139,25 @@ bool deleteLast(DoublyLinkedList *&list)
             list->tail = NULL;
         }
         delete (temp);
+        return true;
     }
+    return false;
+}
+
+bool deleteNode(DoublyLinkedList *&list)
+{
+    Node *temp = list->head;
+    while (temp != NULL)
+    {
+        list->head = temp->next;
+        if (temp->next != NULL)
+            temp->next->prev = NULL;
+        temp->next = NULL;
+        temp = list->head;
+        if (list->head == NULL)
+            list->tail = NULL;
+    }
+    
 }
 bool displayRightToLeft(Node *head, int displayID)
 {
@@ -186,9 +204,7 @@ int main()
     displayRightToLeft(list->head, displayID++);
     deleteLast(list);
     displayRightToLeft(list->head, displayID++);
-    deleteLast(list);
-    displayRightToLeft(list->head, displayID++);
-    deleteLast(list);
+    deleteNode(list);
     displayRightToLeft(list->head, displayID++);
 
     displayID = 0;
