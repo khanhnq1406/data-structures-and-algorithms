@@ -1,10 +1,10 @@
-include <iostream>
+#include <iostream>
 #define max 100
 struct AQueue {
 	int arr[max];
 	int front;
 	int rear;
-}
+};
 
 void init (AQueue &q){
 	q.front = -1;

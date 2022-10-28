@@ -1,7 +1,10 @@
 # Data Structures and Algorithms
+This is my learning process of subject "Data Structures and Algorithms" and I will take notes here &#128221;
+<br />Go to my handwritten notes, [click here!!!&#9997;](https://drive.google.com/file/d/1FvkHS3HBY2fd7C88WjnY6xoNpaCy45i6/view?usp=sharing)
 ## Table of contents
 - [Array](#array)
 - [Linked List](#linked-list)
+- [Stack and Queue](#stack-and-queue)
 
 ## Array
 ### Array Definition
@@ -38,7 +41,29 @@ A doubly linked list or a two-way linked list is a more complex type of linked l
 #### 3. Circular Linked List
 A circular linked list is that in which the last node contains the pointer to the first node of the list. While traversing a circular linked list, we can begin at any node and traverse the list in any direction forward and backward until we reach the same node we started. Thus, a circular linked list has no beginning and no end. 
 
+## Stack and Queue
+### Stack
+Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+<br>A stack is an abstract data type that serves as a collection of elements, with two main operations:
+- **Push**, which adds an element to the collection, and
+- **Pop**, which removes the most recently added element that was not yet removed.
+
+<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Lifo_stack.svg/350px-Lifo_stack.svg.png"></img><br>
+
+### Queue 
+A queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order. <br>
+
+We define a queue to be a list in which all additions to the list are made at one end, and all deletions from the list are made at the other end.  The element which is first pushed into the order, the operation is first performed on that. <br>
+
+There are two main operations: 
+- enqueue − add (store) an item to the queue.
+- dequeue − remove (access) an item from the queue.
+
+<img src = "https://media.geeksforgeeks.org/wp-content/uploads/20220816162225/Queue.png"><br>
+
 
 # Link
 - [Linked List vs Array](https://www.geeksforgeeks.org/linked-list-vs-array/)
 - [Types of Linked List](https://www.geeksforgeeks.org/types-of-linked-list/)
+- [Stack Data Structure](https://www.geeksforgeeks.org/stack-data-structure/)
+- [Queue Data Structure](https://www.geeksforgeeks.org/queue-data-structure/)
