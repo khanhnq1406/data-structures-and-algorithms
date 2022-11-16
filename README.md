@@ -1,6 +1,7 @@
 # Data Structures and Algorithms
 This is my learning process of subject "Data Structures and Algorithms" and I will take notes here &#128221;
 <br />Go to my handwritten notes, [click here!!!&#9997;](https://drive.google.com/file/d/1FvkHS3HBY2fd7C88WjnY6xoNpaCy45i6/view?usp=sharing)
+
 ## Table of contents
 - [Array](#array)
 - [Linked List](#linked-list)
@@ -61,9 +62,42 @@ There are two main operations:
 
 <img src = "https://media.geeksforgeeks.org/wp-content/uploads/20220816162225/Queue.png"><br>
 
+## Algorithmic complexity
+- Algorithmic complexity is a measure of **how long** (time) an algorithm would take to complete given an input of **size n** (memory). Time complexity is often more concerned with memory. 
+- While complexity is usually in terms of time, sometimes complexity is also analyzed in terms of space, which translates to the algorithm's memory requirements.
+### Big-O Notation
+#### What is Big O Notation?
+- Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. With such a notation, it's easy to compare different algorithms because the notation tells clearly how the algorithm scales when input size increases.
+#### Order of growth of algorithms
+- O(1): constant runtime
+- O(n): linear growth
+- O(logn): logarithmic growth (Divide-and-conquer algorithm)
+- O(nlogn): log-linear growth
+- O($n^2$): quadratic growth (loop in loop)
+- O($2^n$): exponential growth
+- O(n!): factorial growth
+- The former is called **best-case** complexity and the latter is called **worst-case** complexity. We can also calculate the **average** complexity
+
+
+<img src="https://devopedia.org/images/article/17/4996.1513922020.jpg"></img>
+
+## Algorithms
+### Linear Search
+Linear Search is defined as a sequential search algorithm that starts at one end and goes through each element of a list until the desired element is found, otherwise the search continues till the end of the data set. It is the easiest searching algorithm.
+
+<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Linear-Search.png"></img>
+
+### Binary Search
+Binary Search is a searching algorithm used in **a sorted array** by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n). 
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20220309171621/BinarySearch.png"></img>
+
 
 # Link
 - [Linked List vs Array](https://www.geeksforgeeks.org/linked-list-vs-array/)
 - [Types of Linked List](https://www.geeksforgeeks.org/types-of-linked-list/)
 - [Stack Data Structure](https://www.geeksforgeeks.org/stack-data-structure/)
 - [Queue Data Structure](https://www.geeksforgeeks.org/queue-data-structure/)
+- [Algorithmic Complexity](https://devopedia.org/algorithmic-complexity)
+- [Linear Search Algorithm](https://www.geeksforgeeks.org/linear-search/)
+- [Binary Search](https://www.geeksforgeeks.org/binary-search/)
