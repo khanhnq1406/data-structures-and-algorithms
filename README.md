@@ -170,6 +170,22 @@ Following are the basic operations of a tree:
 - In-order Traversal − Traverses a tree in an in-order manner.
 - Post-order Traversal − Traverses a tree in a post-order manner.
 
+### Selection Sort
+
+<img src="https://www.w3resource.com/w3r_images/selection-short.png"/>
+
+### Insertion Sort
+
+<img src="https://www.w3resource.com/w3r_images/insertion-sort.png"/>
+
+### Interchange Sort
+
+<img src="https://gochocit.com/wp-content/uploads/2021/10/hoat-dong-interchange-sort.gif"/>
+
+### Bubble Sort
+
+<img src="https://www.w3resource.com/w3r_images/bubble-short.png"/>
+
 # Link
 
 - [Linked List vs Array](https://www.geeksforgeeks.org/linked-list-vs-array/)

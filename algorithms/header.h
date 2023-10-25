@@ -1,0 +1,5 @@
+#include "linearSearch.h"
+#include "binarySearch.h"
+#include "selectionSort.h"
+#include "insertionSort.h"
+#include "utils.h"
